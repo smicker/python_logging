@@ -1,7 +1,7 @@
 
 ## About
 This is a demo that demonstrates how to use the very nice built in logger package in Python.
-It shows how to use different config files, logging to console and to file and also timed rotating logs. It uses the flag 'w' in the logging config files which means that it will open (create if not exist) the log file, erase everything and start printing from the top of the file. Using 'a' would instead append the text to the bottom of the file.
+It shows how to use different config files, logging to console and to file and also timed and size rotating logs. It uses the flag 'w' in the logging config files which means that it will open (create if not exist) the log file, erase everything and start printing from the top of the file. Using 'a' would instead append the text to the bottom of the file.
 
 ## Execution
 Run this from the project folder by:  
@@ -28,4 +28,6 @@ To know what arguments to put in, you can look at the TimedRotatingFileHandler c
 ```def __init__(self, filename, when='h', interval=1, backupCount=0, encoding=None, delay=False, utc=False, atTime=None)```
 
 ### RotatingFileHandler
-Those logs are instead rotated when the file size exceeds a set value. This kind is not included in this demo but it can be implemented in the same way as for TimedRotating logs.
+Those logs are instead rotated when the file size exceeds a set value. In this demo I have set it to rotate for every 100 bytes and maximum keep 6 old files.
+To know what arguments to put in, you can look at the RotatingFileHandler constructor. It looks like this:  
+```def __init__(self, filename, mode='a', maxBytes=0, backupCount=0, encoding=None, delay=0)```

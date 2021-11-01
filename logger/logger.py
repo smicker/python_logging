@@ -27,7 +27,6 @@ def configure_logging(use_config: str = "main") -> None:
         )
 
 
-def log(message, logger_name="main_logger_1") -> None:
-    """Logging framework"""
-    logger = logging.getLogger(logger_name)
-    logger.info(message)
+def get_logger(logger_name="main_logger_1") -> logging.Logger:
+    return logging.getLogger(logger_name)
+
